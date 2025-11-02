@@ -84,3 +84,23 @@ if (typeof require !== 'undefined' && require.main === module) {
 ```
 
 ### Explanation of the example
+
+For the array `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`:
+
+- Start: `current_sum = max_sum = -2`.
+- At `1`: `current_sum = max(1, -2 + 1) = 1`, `max_sum = 1`.
+- Later at `4`: `current_sum = max(4, 1 + 4) = 5`, `max_sum = 5`.
+- Continuing yields the subarray `[4, -1, 2, 1]` with sum `6`, which is the maximum.
+
+### Applications
+
+- Stock price analysis: find the most profitable contiguous period.
+- Signal/image processing: detect regions with maximum cumulative intensity.
+- Data analysis: identify periods of growth in time-series data.
+
+### Limitations and notes
+
+- If all elements are negative, the algorithm returns the largest (least negative) element. If you prefer returning `0` for an empty selection, handle that case explicitly.
+- Kadane's algorithm finds the maximum-sum contiguous subarray. It does not give the indices by default, but you can track start/end indices with a small modification.
+
+Kadane's Algorithm is simple, fast, and widely used in competitive programming and real-world analytics.
